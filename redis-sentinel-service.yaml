@@ -7,7 +7,11 @@ metadata:
   name: redis-sentinel
 spec:
   ports:
-    - port: 26379
+    - name: sentinel
+      port: 26379
       targetPort: 26379
+    - name: redis
+      port: 6379
+      targetPort: 6379
   selector:
     redis-sentinel: "true"
